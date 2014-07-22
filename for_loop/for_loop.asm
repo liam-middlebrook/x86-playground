@@ -2,13 +2,12 @@
 ; A example of a for loop in x86 assembly
 
 section	.text
-    global _start         ;must be declared for using gcc
+    global start         ;must be declared for using gcc
 
-_start:	                ;tell linker entry point
-
-	mov	edx, len	    ;message length
-	mov	ecx, msg	    ;message to write
-	mov	ebx, 1	        ;file descriptor (stdout)
+start:	                ;tell linker entry point
+mov	edx, len	    ;message length
+mov	ecx, msg	    ;message to write
+mov	ebx, 1	        ;file descriptor (stdout)
 loop:
     ;Write 'msg' to stdout
     mov	eax, 4	        ;system call number (sys_write)
